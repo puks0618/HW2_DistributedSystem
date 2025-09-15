@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Book - Artist Library</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Artist Library</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/create" class="active">Create Book</a>
+        <a href="/books">View Books</a>
+      </nav>
+    </header>
+    
+    <main>
+      <h2>Create New Book</h2>
+      
+      <% if (typeof error !== 'undefined') { %>
+        <div class="error-message"><%= error %></div>
+      <% } %>
+      
+      <form action="/create" method="POST" class="book-form">
+        <div class="form-group">
+          <label for="title">Book Title:</label>
+          <input type="text" id="title" name="title" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="author">Author Name:</label>
+          <input type="text" id="author" name="author" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="isbn">ISBN:</label>
+          <input type="text" id="isbn" name="isbn" required>
+        </div>
+        
+        <div class="form-actions">
+          <button type="submit" class="submit-btn">Create Book</button>
+          <a href="/" class="cancel-btn">Cancel</a>
+        </div>
+      </form>
+    </main>
+    
+    <footer>
+      <p>© 2025 Artist Library</p>
+    </footer>
+  </div>
+</body>
+</html>
